@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankita's Portfolio 💖</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 50%, #ddd6fe 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bounce-in {
+            animation: bounceIn 0.8s ease-out;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .glow-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+        }
+        
+        .glow-button:hover {
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-pink-100">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-pink-600">Ankita ✨</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-pink-500 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-pink-500 transition-colors">About</a>
+                    <a href="#projects" class="text-gray-700 hover:text-pink-500 transition-colors">Projects</a>
+                    <a href="#art" class="text-gray-700 hover:text-pink-500 transition-colors">Digital Art</a>
+                    <a href="#skills" class="text-gray-700 hover:text-pink-500 transition-colors">Skills</a>
+                    <a href="#achievements" class="text-gray-700 hover:text-pink-500 transition-colors">Achievements</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bounce-in">
+                <div class="text-6xl mb-6 floating"></div>
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-6">
+                    Hi, I'm <span class="text-pink-500">Ankita</span> 
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 fade-in">
+                    A Second year CS undergrad who loves making things cute, simple, and fun! 
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center slide-up">
+                    <button onclick="scrollToProjects()" class="glow-button bg-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-600">
+                        View My Work 💖
+                    </button>
+                    <button onclick="sayHello()" class="bg-white text-pink-500 px-8 py-4 rounded-full font-semibold border-2 border-pink-200 hover:border-pink-300 transition-all cursor-pointer">
+                        Say Hello 👋
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">About Me 🌟</h2>
+                <div class="w-24 h-1 bg-pink-400 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
+                        <div class="text-center mb-6">
+                            <div class="w-32 h-32 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full mx-auto flex items-center justify-center text-4xl mb-4">
+                                👩‍💻
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            I love designing and building apps that look cute, simple, and fun to use. I'm also passionate about digital art and creating aesthetic websites that bring joy to users! 
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed mt-4">
+                            When I'm not coding, you'll find me creating digital art, exploring new design trends, or working on projects that make the world a little more colorful! 🎨
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-pink-100 rounded-2xl p-6 text-center card-hover">
+                        <div class="text-3xl mb-2">🎨</div>
+                        <h3 class="font-semibold text-gray-800">Creative Design</h3>
+                    </div>
+                    <div class="bg-purple-100 rounded-2xl p-6 text-center card-hover">
+                        <div class="text-3xl mb-2">💻</div>
+                        <h3 class="font-semibold text-gray-800">Development</h3>
+                    </div>
+                    <div class="bg-blue-100 rounded-2xl p-6 text-center card-hover">
+                        <div class="text-3xl mb-2">✨</div>
+                        <h3 class="font-semibold text-gray-800">UI/UX Magic</h3>
+                    </div>
+                    <div class="bg-yellow-100 rounded-2xl p-6 text-center card-hover">
+                        <div class="text-3xl mb-2">🌈</div>
+                        <h3 class="font-semibold text-gray-800">Digital Art</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+<section id="projects" class="py-20 px-6 bg-white/30">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">My Projects 💖</h2>
+            <div class="w-24 h-1 bg-pink-400 mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <a href="https://cloudiee.netlify.app/" target="_blank" class="project-card rounded-3xl p-8 card-hover block">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">💖</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Cloudie</h3>
+                    <p class="text-gray-600 mb-6">A minimalist, pastel weather app designed to feel cozy and fun!</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">UI/UX</span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://cinevieww.netlify.app/" target="_blank" class="project-card rounded-3xl p-8 card-hover block">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🌸</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">CineView</h3>
+                    <p class="text-gray-600 mb-6">A visually appealing movie sorting app with pastel-inspired UI, smooth navigation, and genre-based categorization to enhance user experience and discovery.</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Java</span>
+                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Community</span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="https://vvsleepy.github.io/-Disaster-Alert-Dashboard/" target="_blank" class="project-card rounded-3xl p-8 card-hover block">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Disaster Alert Dashboard</h3>
+                    <p class="text-gray-600 mb-6">A real-time dashboard that tracks earthquakes and helps users find nearby disaster relief centers.</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">Safety</span>
+                        <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Mobile</span>
+                    </div>
+                </div>
+            </a>
+             <a href="https://vvsleepy.github.io/Ai-Photo-Editor/" target="_blank" class="project-card rounded-3xl p-8 card-hover block">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🎀</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Ai Photo Editor</h3>
+                    <p class="text-gray-600 mb-6">Designed a pastel-inspired photo editing web app with background removal, filters, and cropping tools, focusing on smooth UI/UX and an aesthetic user experience.</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">Silly</span>
+                        <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">JS</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://mytravelbucketlist01.netlify.app/" target="_blank" class="project-card rounded-3xl p-8 card-hover block">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🍒</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Travel Bucket List</h3>
+                    <p class="text-gray-600 mb-6">Built a small travel planning app with destination tracking and a pastel, user-friendly interface.</p>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">CSS</span>
+                        <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Html</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- Digital Art -->
+     <section id="art" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Digital Art Gallery 🎨</h2>
+            <div class="w-24 h-1 bg-pink-400 mx-auto rounded-full"></div>
+            <p class="text-gray-600 mt-4 text-lg">Where creativity meets pixels! Here's a collection of my favorite digital artworks ✨</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white/60 backdrop-blur-sm rounded-3xl p-6 card-hover cursor-pointer">
+    <div class="w-full aspect-square overflow-hidden rounded-2xl mb-4 p-2">
+        <img src="images/image.png" alt="Psychedelic poster inspired by Tame Impala’s Currents, made in Figma 🌸🎶" class="w-full h-full object-contain">
+    </div>
+    <h3 class="text-xl font-bold text-gray-800 mb-2">Tame Impala</h3>
+    <p class="text-gray-600 text-sm mb-3">Psychedelic poster inspired by Tame Impala’s Currents, made in Figma 🌸🎶</p>
+    <div class="flex flex-wrap gap-2">
+        <span class="bg-pink-100 text-pink-600 px-2 py-1 rounded-full text-xs">Digital Painting</span>
+        <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs">Music</span>
+    </div>
+</div>
+
+            
+    </div>
+</section>
+
+    
+    <!-- Skills -->
+    <section id="skills" class="py-20 px-6 bg-white/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Skills & Tools 🛠️</h2>
+                <div class="w-24 h-1 bg-pink-400 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="skill-badge bg-blue-100 rounded-2xl p-6 text-center cursor-pointer">
+                    <div class="text-3xl mb-2">⚛️</div>
+                    <h3 class="font-semibold text-gray-800 text-sm">React</h3>
+                </div>
+                <div class="skill-badge bg-orange-100 rounded-2xl p-6 text-center cursor-pointer">
+                    <div class="text-3xl mb-2">☕</div>
+                    <h3 class="font-semibold text-gray-800 text-sm">Java</h3>
+                </div>
+                <div class="skill-badge bg-yellow-100 rounded-2xl p-6 text-center cursor-pointer">
+                    <div class="text-3xl mb-2">🐍</div>
+                    <h3 class="font-semibold text-gray-800 text-sm">Python</h3>
+                </div>
+                <div class="skill-badge bg-pink-100 rounded-2xl p-6 text-center cursor-pointer">
+                    <div class="text-3xl mb-2">🎨</div>
+                    <h3 class="font-semibold text-gray-800 text-sm">UI/UX</h3>
+                </div>
+                <div class="skill-badge bg-purple-100 rounded-2xl p-6 text-center cursor-pointer">
+                    <div class="text-3xl mb-2">📐</div>
+                    <h3 class="font-semibold text-gray-800 text-sm">Figma</h3>
+                </div>
+                <div class="skill-badge bg-green-100 rounded-2xl p-6 text-center cursor-pointer">
+                    <div class="text-3xl mb-2">🖌️</div>
+                    <h3 class="font-semibold text-gray-800 text-sm">Digital Art</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="py-20 px-6 bg-white/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Achievements 🏆</h2>
+                <div class="w-24 h-1 bg-pink-400 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="bg-white/60 backdrop-blur-sm rounded-3xl p-8 card-hover">
+                    <div class="flex items-center gap-6">
+                        <div class="text-4xl">🥇</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Digital Art Winner</h3>
+                            <p class="text-gray-600">Won first place in the Women's Safety App Challenge with TouchMeNot</p>
+                            <span class="text-sm text-pink-500 font-medium">2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-3xl p-8 card-hover">
+                    <div class="flex items-center gap-6">
+                        <div class="text-4xl">🎨</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Design Showcase Featured</h3>
+                            <p class="text-gray-600">Budget Buddy featured in top 10 student design projects</p>
+                            <span class="text-sm text-pink-500 font-medium">2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/60 backdrop-blur-sm rounded-3xl p-8 card-hover">
+                    <div class="flex items-center gap-6">
+                        <div class="text-4xl">🌟</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Community Impact Award</h3>
+                            <p class="text-gray-600">CarePair recognized for positive community impact</p>
+                            <span class="text-sm text-pink-500 font-medium">2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-white/50">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="mailto:ankita@example.com" class="text-3xl hover:scale-110 transition-transform cursor-pointer">📧</a>
+                <a href="#" class="text-3xl hover:scale-110 transition-transform cursor-pointer">💼</a>
+                <a href="#" class="text-3xl hover:scale-110 transition-transform cursor-pointer">🐱</a>
+            </div>
+            <p class="text-gray-600 text-lg">Made with 💖 by Ankita</p>
+            <p class="text-gray-500 text-sm mt-2">Spreading joy through design, one pixel at a time ✨</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Project click handler
+        function openProject(projectName) {
+            const messages = {
+                'budget-buddy': 'Budget Buddy: A cute finance tracker that makes managing money fun! 💖',
+                'carepair': 'CarePair: Connecting communities through mutual help and support! 🌸',
+                'touchmenot': 'TouchMeNot: Empowering women with safety features and community support! 🛡️'
+            };
+            
+            alert(messages[projectName] || 'Project details coming soon! ✨');
+        }
+
+        // Hero button functions
+        function scrollToProjects() {
+            document.querySelector('#projects').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function sayHello() {
+            alert("Hello there! 👋 Thanks for visiting my portfolio! Feel free to reach out at ankita@example.com or connect with me on social media. Let's create something amazing together! ✨💖");
+        }
+
+        // Art gallery functions
+        function viewArt(artName) {
+            const artDescriptions = {
+                'dreamy-landscape': 'Dreamy Sunset 🌅\n\nA peaceful landscape featuring soft gradients and warm colors. This piece captures the serene beauty of a sunset with rolling hills and gentle curves. Created using digital painting techniques with focus on color harmony and atmospheric perspective.',
+                'cute-character': 'Kawaii Character 🥰\n\nAn adorable character design with soft pastel colors and cute features. This piece embodies the kawaii aesthetic with its round shapes, gentle expressions, and sweet color palette. Perfect for bringing joy and cuteness to any project!',
+                'abstract-flowers': 'Abstract Florals 🌸\n\nA modern floral composition with vibrant colors and organic shapes. This artwork combines traditional floral motifs with contemporary abstract elements, creating a fresh and dynamic piece that celebrates nature in a stylized way.',
+                'cosmic-dreams': 'Cosmic Dreams 🌌\n\nA dreamy space scene featuring stars, nebulas, and cosmic elements. This piece explores the mystery and beauty of outer space through soft gradients and ethereal lighting effects. Perfect for those who love to dream about the universe!',
+                'minimalist-portrait': 'Minimalist Portrait 👩‍🎨\n\nA simple yet expressive portrait with clean lines and warm tones. This artwork demonstrates how powerful simplicity can be in conveying emotion and personality. Created with focus on essential elements and subtle color variations.',
+                'digital-mandala': 'Digital Mandala 🕉️\n\nMeditative geometric patterns in soothing colors. This mandala combines traditional sacred geometry with modern digital techniques, creating a piece that promotes calm and mindfulness through its balanced and harmonious design.'
+            };
+            
+            alert(artDescriptions[artName] || 'Beautiful artwork! ✨');
+        }
+
+        function contactForArt() {
+            alert('💖 Art Commissions Available! 💖\n\nI\'d love to create custom digital artwork for you! Whether you need:\n\n🎨 Character designs\n🌸 Illustrations\n🖼️ Digital portraits\n✨ Abstract art\n🌈 Logo designs\n\nReach out at ankita@example.com with your ideas and let\'s bring your vision to life! ✨');
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s ease-out';
+            observer.observe(section);
+        });
+
+        // Initialize first section
+        document.querySelector('#home').style.opacity = '1';
+        document.querySelector('#home').style.transform = 'translateY(0)';
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'981392cb74b0741b',t:'MTc1ODIyNzEzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
